@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradientFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a6fa5" />
+      <stop offset="100%" stop-color="#47b8e0" />
+    </linearGradient>
+  </defs>
+  <!-- Shield background -->
+  <path d="M19.2 37.12
+           L64 108.8
+           L108.8 37.12
+           L108.8 19.2
+           L19.2 19.2
+           Z" 
+        fill="url(#gradientFill)" />
+  
+  <!-- Privacy eye symbol -->
+  <circle cx="64" cy="57.6" r="19.712" 
+          fill="white" stroke="white" stroke-width="3.84" />
+  <circle cx="64" cy="57.6" r="9.856" 
+          fill="#4a6fa5" />
+          
+  <!-- Slash through eye (privacy) -->
+  <line x1="37.12" y1="81.92" 
+        x2="90.88" y2="37.120000000000005"
+        stroke="white" stroke-width="6.4" stroke-linecap="round" />
+</svg>

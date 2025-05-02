@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css" />
+  <title>Privacy Score Analyzer</title>
+</head>
+<body>
+  <header>
+    <h1>Privacy Score Analyzer</h1>
+    <div class="tabs">
+      <button id="tab-overview" class="tab-button active">Overview</button>
+      <button id="tab-details" class="tab-button">Details</button>
+      <button id="tab-history" class="tab-button">History</button>
+      <button id="tab-settings" class="tab-button">Settings</button>
+    </div>
+  </header>
+  
+  <div id="overview-panel" class="panel active">
+    <div class="site-info">
+      <div class="domain" id="site-domain">Loading...</div>
+      <div class="grade-container">
+        <div class="grade" id="grade">?</div>
+        <div class="score-text">Privacy Score</div>
+        <div class="numeric-score" id="numeric-score">--</div>
+      </div>
+      <div class="summary">
+        <div class="summary-item">
+          <span class="label">Trackers found:</span>
+          <span id="tracker-count">--</span>
+        </div>
+        <div class="summary-item">
+          <span class="label">Last scanned:</span>
+          <span id="last-scan">--</span>
+        </div>
+      </div>
+      <button id="rescan-button" class="action-button">Scan Again</button>
+    </div>
+  </div>
+  
+  <div id="details-panel" class="panel">
+    <div class="details-header">
+      <h2>Detected Trackers</h2>
+      <div class="tracker-count"><span id="details-tracker-count">0</span> trackers found</div>
+    </div>
+    <ul id="trackers-list" class="trackers-list">
+      <!-- Trackers will be added here dynamically -->
+    </ul>
+    <div id="no-trackers-message" class="no-trackers hidden">
+      <p>No trackers detected on this site.</p>
+      <p class="good-privacy">This site respects your privacy!</p>
+    </div>
+  </div>
+  
+  <div id="history-panel" class="panel">
+    <h2>Browsing History</h2>
+    <div class="history-filters">
+      <select id="history-filter">
+        <option value="all">All Sites</option>
+        <option value="bad">Poor Privacy (D-F)</option>
+        <option value="good">Good Privacy (A-C)</option>
+      </select>
+    </div>
+    <div class="history-list" id="history-list">
+      <!-- History items will be added here dynamically -->
+    </div>
+    <div class="history-empty hidden" id="history-empty">
+      <p>No browsing history available.</p>
+    </div>
+  </div>
+  
+  <div id="settings-panel" class="panel">
+    <h2>Settings</h2>
+    <div class="settings-group">
+      <div class="setting-item">
+        <div class="setting-label">Enable Badge Display</div>
+        <div class="setting-control">
+          <label class="switch">
+            <input type="checkbox" id="enable-badge" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="setting-item">
+        <div class="setting-label">Notifications for Poor Scores</div>
+        <div class="setting-control">
+          <label class="switch">
+            <input type="checkbox" id="enable-notifications">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="setting-item">
+        <div class="setting-label">Auto-Scan on Page Load</div>
+        <div class="setting-control">
+          <label class="switch">
+            <input type="checkbox" id="auto-scan" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="settings-actions">
+      <button id="clear-data" class="action-button warning">Clear All Data</button>
+      <div id="clear-confirmation" class="clear-confirmation hidden">
+        <p>Are you sure you want to delete all stored data?</p>
+        <div class="confirm-buttons">
+          <button id="clear-confirm-yes" class="action-button danger">Yes, Delete</button>
+          <button id="clear-confirm-no" class="action-button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <span>Privacy Score Analyzer v2.0.0</span>
+    </div>
+  </footer>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

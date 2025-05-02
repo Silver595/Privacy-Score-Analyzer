@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Privacy Score Analyzer",
+    "version": "2.0.0",
+    "description": "Analyzes websites for trackers and provides a privacy score from A to F",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting",
+      "webNavigation",
+      "webRequest"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
